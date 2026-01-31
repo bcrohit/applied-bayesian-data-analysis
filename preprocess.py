@@ -38,7 +38,7 @@ def basic_clean(df): # !NOTE: Should we reatin cancelled ones?
     # If station name is null, replace it with xml_station_name
     df["station_name"] = df["station_name"].fillna(df["xml_station_name"])
 
-        # Remove cancelled trains, to focus delay magnitude
+    # Remove cancelled trains, to focus delay magnitude
     df = df[
         (df["is_canceled"] == False) &
         (df["delay_in_min"].notna())
